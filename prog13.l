@@ -2,7 +2,7 @@
 #include <stdio.h>
 %}
 %%
-\<[^>]*\> fprintf(yyout,"%s\n",yytext);
+\<[^>]*\> {fprintf(yyout,"%s\n",yytext); printf("%s\n", yytext); }
 .|\n ;
 %%
 int yywrap() {}
